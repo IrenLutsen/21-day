@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Видима і впевнена — 21-денний кар'єрний челендж для жінок 35+</title>
+<meta name="description" content="21-денний челендж для жінок 35+: покажи роботодавцям і рекрутерам свою реальну цінність. Старт 1 жовтня.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FFFFFF;
+    --bg:#FFFFFF;
+    --ink:#1C1912;
+    --ink-soft:#5A5348;
+    --orange:#FF5B1F;
+    --orange-deep:#E14700;
+    --orange-pale:#FFF1E7;
+    --line:#EDE6D8;
+    --radius:18px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:19px;line-height:1.65;}
+  h1,h2,h3,.display{font-family:'Fraunces',serif;font-weight:700;text-transform:none;line-height:1.1;letter-spacing:-0.01em;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:16px;}
+  .eyebrow::before{content:"";width:22px;height:2px;background:var(--orange);display:inline-block;}
+  .icon{width:26px;height:26px;stroke:var(--orange-deep);fill:none;stroke-width:1.8;flex:none;}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);}
+  nav{display:flex;align-items:center;justify-content:space-between;max-width:1080px;margin:0 auto;padding:18px 24px;}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:20px;text-transform:none;}
+  .logo span{color:var(--orange-deep);}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 28px;border-radius:100px;font-weight:800;font-size:17px;border:2px solid transparent;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease;}
+  .btn-primary{background:var(--orange);color:#fff;box-shadow:0 6px 0 var(--orange-deep);}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-primary:active{transform:translateY(2px);box-shadow:0 2px 0 var(--orange-deep);}
+  .btn-sm{padding:11px 20px;font-size:15px;box-shadow:0 4px 0 var(--orange-deep);}
+  .btn-block{width:100%;}
+  .btn-ghost{background:transparent;color:var(--ink);border:2px solid var(--line);}
+
+  section{padding:76px 0;}
+  .section-head{max-width:700px;margin-bottom:40px;}
+  .section-head h2{font-size:clamp(28px,3.6vw,42px);margin:0 0 16px;}
+  .section-head p{color:var(--ink-soft);font-size:19px;margin:0;}
+
+  /* HERO */
+  .hero{padding:56px 0 48px;}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;}
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:36px;}.hero-photo{max-width:420px;margin:0 auto;}}
+  .badge-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px;}
+  .pill{background:var(--orange-pale);color:var(--orange-deep);padding:9px 18px;border-radius:100px;font-size:14px;font-weight:800;}
+  .hero h1{font-size:clamp(30px,4.6vw,46px);margin:0 0 14px;}
+  .hero .sub{font-size:21px;font-weight:600;color:var(--ink);margin:0 0 22px;max-width:560px;}
+  .hero-metaline{font-size:15.5px;color:var(--ink-soft);font-weight:600;margin:0 0 8px;}
+  .hero-body{font-size:17px;color:var(--ink-soft);margin:20px 0 30px;max-width:540px;}
+  .hero-photo img{width:100%;border-radius:26px;display:block;border:6px solid var(--paper);box-shadow:0 20px 50px -20px rgba(28,25,18,.25);}
+  .hero-price-note{font-size:15px;color:var(--ink-soft);margin-top:14px;}
+  .explainer-box{background:var(--orange-pale);border-radius:20px;padding:32px 40px;max-width:760px;margin:0 auto;text-align:center;}
+  .explainer-box p{font-size:18px;color:var(--ink);margin:0;line-height:1.6;}
+
+  /* WHAT YOU GET */
+  .getlist{display:flex;flex-direction:column;gap:14px;max-width:720px;margin:0 auto;}
+  .get-item{display:flex;align-items:flex-start;gap:16px;background:var(--paper);border:2px solid var(--line);border-radius:16px;padding:20px 24px;}
+  .get-ico{width:26px;height:26px;flex:none;color:var(--orange-deep);margin-top:2px;}
+  .get-ico svg{width:100%;height:100%;}
+  .get-item b{font-size:17px;display:block;}
+  .get-item span{color:var(--ink-soft);font-size:14.5px;}
+  .get-item.map{border-color:var(--orange);background:var(--orange-pale);}
+
+  /* FOR WHOM */
+  .forwhom-list{list-style:none;margin:0;padding:0;max-width:760px;margin:0 auto;}
+  .forwhom-list li{position:relative;padding:16px 0 16px 34px;font-size:19px;border-bottom:1px solid var(--line);color:var(--ink-soft);}
+  .forwhom-list li:last-child{border-bottom:none;}
+  .forwhom-list li svg{position:absolute;left:0;top:18px;width:20px;height:20px;stroke:var(--orange-deep);fill:none;stroke-width:2.2;}
+  .forwhom-close{margin-top:28px;font-size:20px;font-weight:800;color:var(--orange-deep);text-align:center;}
+
+  /* HOW IT WORKS */
+  .how-grid{display:flex;flex-direction:column;gap:18px;}
+  .how-card{background:var(--paper);border:2px solid var(--line);border-radius:20px;padding:32px 36px;}
+  .how-card h3{font-size:22px;margin:0 0 10px;}
+  .how-card p{color:var(--ink-soft);font-size:17px;margin:0;}
+  .weeks-strip{display:flex;flex-direction:column;gap:10px;margin-top:16px;}
+  .weeks-strip .wk{display:flex;gap:14px;align-items:baseline;}
+  .weeks-strip .wk b{color:var(--orange-deep);font-family:'Fraunces',serif;flex:none;width:110px;}
+  .weeks-strip .wk span{color:var(--ink-soft);font-size:16px;}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center;}
+  .about-photo img{width:100%;border-radius:22px;}
+  .about-grid p{color:var(--ink-soft);font-size:18px;margin:0 0 16px;}
+  .credchips{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 20px;}
+  .credchip{background:var(--orange-pale);color:var(--orange-deep);padding:9px 16px;border-radius:100px;font-size:14px;font-weight:800;}
+  .credchip a{color:var(--orange-deep);text-decoration:underline;}
+  @media(max-width:860px){.about-grid{grid-template-columns:1fr;}}
+
+  /* GUARANTEE / FAQ */
+  .faq{max-width:820px;}
+  .faq-item{border-bottom:2px solid var(--line);padding:22px 0;}
+  .faq-item summary{cursor:pointer;font-weight:800;font-size:18px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:"+";font-family:'Fraunces',serif;font-weight:700;color:var(--orange);font-size:24px;flex:none;}
+  .faq-item[open] summary::after{content:"–";}
+  .faq-item p{color:var(--ink-soft);margin:14px 0 0;font-size:17px;}
+
+  /* SOFT CTA */
+  .soft-cta{background:var(--paper);border:2px dashed var(--line);border-radius:20px;padding:32px 36px;text-align:center;max-width:600px;margin:0 auto;}
+  .soft-cta h3{font-size:21px;margin:0 0 10px;}
+  .soft-cta p{color:var(--ink-soft);font-size:15.5px;margin:0 0 20px;}
+
+  /* PRICE */
+  .price-block{background:var(--paper);border:2px solid var(--orange);border-radius:28px;padding:48px;text-align:center;}
+  .price-row{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin:24px 0 32px;}
+  .price-card{background:var(--orange-pale);border-radius:18px;padding:28px 34px;min-width:200px;}
+  .price-card.pop{border:2px solid var(--orange);}
+  .price-card .p-tag{font-size:13px;color:var(--ink-soft);font-weight:700;text-transform:uppercase;margin-bottom:8px;display:block;}
+  .price-card .p-val{font-family:'Fraunces',serif;font-weight:700;font-size:38px;color:var(--orange-deep);}
+  .price-card .p-sub{font-size:14px;color:var(--ink-soft);margin-top:6px;}
+  .price-pay-btn{margin-top:18px;font-size:14.5px;padding:12px 0;}
+  .includes-list{text-align:left;max-width:440px;margin:0 auto 30px;}
+  .includes-list li{color:var(--ink-soft);font-size:17px;margin-bottom:12px;list-style:none;padding-left:30px;position:relative;}
+  .includes-list li svg{position:absolute;left:0;top:2px;width:20px;height:20px;stroke:var(--orange-deep);fill:none;stroke-width:2.2;}
+  .price-block .p-note{font-size:16px;color:var(--ink-soft);font-weight:700;}
+
+  /* FINAL CTA */
+  .final{background:var(--orange-pale);border-radius:32px;margin:0 24px;padding:64px 40px;text-align:center;}
+  .final h2{color:var(--ink);font-size:clamp(28px,4vw,44px);}
+  .final p{color:var(--ink-soft);max-width:560px;margin:16px auto 32px;font-size:19px;}
+  .final .micro{color:var(--ink-soft);font-size:15px;margin-top:18px;}
+  .final .micro a{text-decoration:underline;color:var(--orange-deep);font-weight:700;}
+
+  /* LEGAL */
+  .legal-section{background:var(--paper);border-top:1px solid var(--line);padding:48px 0 24px;}
+  .legal-block{max-width:760px;margin:0 auto 32px;}
+  .legal-block h3{font-size:19px;margin:0 0 12px;}
+  .legal-block p{font-size:14.5px;color:var(--ink-soft);margin:0 0 10px;line-height:1.6;}
+
+  /* SOCIAL */
+  .social-section{background:var(--orange-pale);padding:36px 0;text-align:center;}
+  .social-section p{font-size:15px;color:var(--ink-soft);margin:0 0 16px;}
+  .social-links{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+  .social-link{display:inline-flex;align-items:center;gap:8px;background:var(--paper);border:2px solid var(--line);padding:10px 20px;border-radius:100px;font-weight:700;font-size:14.5px;color:var(--ink);}
+  .social-link:hover{border-color:var(--orange);color:var(--orange-deep);}
+  .social-link svg{width:18px;height:18px;stroke:currentColor;fill:none;}
+  .social-link.telegram-link{background:var(--orange);color:#fff;border-color:var(--orange);}
+  .social-link.telegram-link svg{stroke:#fff;}
+
+  footer{padding:40px 0;text-align:center;color:var(--ink-soft);font-size:15px;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">Видима і <span>впевнена</span></div>
+    <a class="btn btn-primary btn-sm pay-direct-btn" href="#" target="_blank">Приєднатись за €97</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="badge-row">
+        <span class="pill">Старт 1 жовтня</span>
+        <span class="pill">Новий потік</span>
+        <span class="pill">€97</span>
+      </div>
+      <h1>За 21 день — готова розповідь про себе, оновлений LinkedIn і впевнені відповіді на будь-яке незручне питання на співбесіді.</h1>
+      <p class="sub">Ти маєш досвід. Проблема не в ньому — а в тому, що ти ще не навчилась говорити про нього так, щоб тебе побачили.</p>
+      <p class="hero-body">Твій досвід нікуди не зник — він просто ще не упакований. За 21 день: чітка розповідь про себе, LinkedIn який знаходять рекрутери, і впевнені відповіді — включно з питанням про вік і паузу. Один крок на день. Я поруч.</p>
+      <a class="btn btn-primary pay-direct-btn" href="#" target="_blank">Приєднатись за €97 →</a>
+      <p class="hero-price-note">або €150, якщо приєднуєтесь удвох</p>
+    </div>
+    <div class="hero-photo">
+      <img src="ira-1-desk.jpg" alt="Ірина за роботою">
+    </div>
+  </div>
+</section>
+
+<div class="wrap" style="text-align:center;padding:8px 24px 0;">
+  <a class="btn btn-primary pay-direct-btn" href="#" target="_blank">Приєднатись за €97 →</a>
+</div>
+
+<!-- WHAT YOU GET -->
+<section id="whatyouget">
+  <div class="wrap">
+    <div class="section-head" style="text-align:center;max-width:100%;">
+      <div class="eyebrow" style="justify-content:center;">Що ти забираєш</div>
+      <h2>Не натхнення. Конкретні інструменти</h2>
+      <p style="max-width:600px;margin:0 auto;">Не натхнення і не теорія. Конкретні інструменти, які ти зробила своїми руками і забираєш назавжди.</p>
+    </div>
+    <div class="getlist">
+      <div class="get-item">
+        <span class="get-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        <div><b>Розповідь про себе, яку хочеться сказати вголос</b><span>30 секунд і 2 хвилини. Для співбесіди, для нетворкінгу, для того моменту, коли питають «розкажіть про себе» — і ти більше не губишся.</span></div>
+      </div>
+      <div class="get-item">
+        <span class="get-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="9" width="20" height="12" rx="2"/><path d="M7 9V6a5 5 0 0 1 10 0v3"/></svg></span>
+        <div><b>LinkedIn, який працює поки ти спиш</b><span>Профіль, що проходить автоматичний фільтр і змушує рекрутера зупинитись. Не черговий профіль з фото і списком місць роботи — а профіль, який продає.</span></div>
+      </div>
+      <div class="get-item">
+        <span class="get-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></span>
+        <div><b>Резюме, яке говорить «ось що я зробила», а не «ось де я працювала»</b><span>Рекрутер бачить цінність з першого рядка — і хоче дізнатись більше.</span></div>
+      </div>
+      <div class="get-item">
+        <span class="get-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 0 1-3.4 6.7 8.5 8.5 0 0 1-9.8.9L3 21l1.9-4.8A8.38 8.38 0 0 1 3.5 12 8.5 8.5 0 0 1 12 3.5h.5a8.48 8.48 0 0 1 8 8v0Z"/></svg></span>
+        <div><b>Відповіді на питання, які зараз змушують тебе губитись</b><span>Про вік, про паузу, про «чому так довго не працювали». Готові формулювання, які звучать впевнено — а не як виправдання.</span></div>
+      </div>
+      <div class="get-item map">
+        <span class="get-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4Z"/><path d="M8 2v16M16 6v16"/></svg></span>
+        <div><b>«Карта видимості»</b><span>Один документ, в якому зібрано все: твої сильні сторони, твій наратив, твій скрипт для HR. Заповнюєш по днях — виходиш з повною картою себе як професіоналки.</span></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px;">
+      <a class="btn btn-primary pay-direct-btn" href="#" target="_blank">Приєднатись за €97 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHOM -->
+<section id="for">
+  <div class="wrap">
+    <div class="section-head" style="text-align:center;max-width:100%;">
+      <div class="eyebrow" style="justify-content:center;">Для кого</div>
+      <h2>Це для тебе, якщо</h2>
+    </div>
+    <ul class="forwhom-list">
+      <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Була пауза в кар'єрі — декрет, переїзд, догляд за близькими — і тепер не знаєш, як пояснити її на співбесіді, щоб це не звучало як слабкість.</li>
+      <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Ти вже відправляла резюме. Відповідей майже немає — або є співбесіди, але вони нікуди не ведуть.</li>
+      <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Ти розумієш, що маєш що запропонувати, але коли треба розповісти про себе — слова кудись зникають.</li>
+      <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Ти переїхала до іншої країни і відчуваєш, що треба «доводити себе» заново, хоча за плечима 10+ років досвіду.</li>
+      <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Тобі 35, 40, 45+ — і це відчувається як перешкода, хоча ти й сама не до кінця розумієш чому.</li>
+    </ul>
+    <p class="forwhom-close">Якщо читаючи це ти кивала хоч раз — ти на правильній сторінці.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="wrap">
+    <div class="section-head" style="text-align:center;max-width:100%;">
+      <div class="eyebrow" style="justify-content:center;">Як це працює</div>
+      <h2>21 крок, не марафон</h2>
+      <p style="max-width:640px;margin:0 auto;">Не марафон з мотивацією, яка зникає на четвертий день. А 21 крок, після кожного з яких у тебе є готовий документ або формулювання.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-card">
+        <h3>21 день — один крок на день</h3>
+        <p>Щодня ти отримуєш одне конкретне завдання. Не список на 40 пунктів — одна дія, яку можна зробити за 30–60 хвилин. До кінця дня ти маєш результат. До кінця челенджу — повний набір інструментів.</p>
+        <div class="weeks-strip">
+          <div class="wk"><b>Тиждень 1</b><span>Розповідь про себе і наратив</span></div>
+          <div class="wk"><b>Тиждень 2</b><span>LinkedIn і резюме</span></div>
+          <div class="wk"><b>Тиждень 3</b><span>Відповіді на важкі питання і фінальна «Карта видимості»</span></div>
+        </div>
+      </div>
+      <div class="how-card">
+        <h3>Щотижнева жива зустріч</h3>
+        <p>Питання, розбір, підтримка. Ти не йдеш цим шляхом сама.</p>
+      </div>
+      <div class="how-card">
+        <h3>Закрита група</h3>
+        <p>Жінки, які знають, що таке повертатись. Підтримка тих, хто розуміє з першого слова.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-photo">
+      <img src="ira-6-chair.jpg" alt="Ірина, кар'єрна коучка">
+    </div>
+    <div>
+      <div class="eyebrow">Про мене</div>
+      <h2>Я знаю, де саме ти зараз застрягла</h2>
+      <p>Я Ірина. Я знаю, як це — прийти на співбесіду з роками досвіду і почути: «Ваш досвід дуже різноплановий — чому саме зараз і саме це?» Губитись. Виправдовуватись. Отримати відмову.</p>
+      <p>За кар'єру я змінила понад 12 напрямів — від нерухомості до міжнародних гуманітарних проєктів. У 41, після початку повномасштабної війни, почала заново. І саме тоді зрозуміла: проблема не в досвіді. Проблема в тому, як його пакуєш.</p>
+      <p>Я перестала виправдовуватись і навчилась перетворювати різноплановість на конкурентну перевагу. Після цього побудувала кар'єру, яка поєднує кілька напрямків одночасно: очолюю міжнародну жіночу організацію <a href="https://womafreesm.com/" target="_blank" style="color:var(--orange-deep);font-weight:700;">WomaFreesm</a> (понад 126 тисяч аудиторії в соцмережах), працюю радницею зі стратегічних партнерств іспанської асоціації «Дві землі, два сонця», директоркою з розвитку благодійного фонду <a href="https://hopechildrenua.org/ua/main/" target="_blank" style="color:var(--orange-deep);font-weight:700;">Hope – Children of Ukraine</a> — і також мала досвід співпраці з ЮНІСЕФ.</p>
+      <div class="credchips">
+        <span class="credchip">CEO <a href="https://womafreesm.com/" target="_blank">WomaFreesm</a></span>
+        <span class="credchip">Радниця · «Дві землі, два сонця»</span>
+        <span class="credchip">Директорка з розвитку · <a href="https://hopechildrenua.org/ua/main/" target="_blank">Hope – Children of Ukraine</a></span>
+      </div>
+      <p>Зараз я допомагаю жінкам 35+ пройти той самий шлях — швидше і з меншим болем.</p>
+      <p><b>Не тому що я «мотиваторка».</b> А тому що я пройшла це і знаю, де саме ти зараз застрягла.</p>
+      <p style="font-weight:700;color:var(--ink);">Якщо впізнаєш себе — ти в правильному місці.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap" style="text-align:center;padding:8px 24px 0;">
+  <a class="btn btn-primary pay-direct-btn" href="#" target="_blank">Приєднатись за €97 →</a>
+</div>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Питання</div>
+      <h2>Питання, які часто запитують</h2>
+    </div>
+    <div class="faq">
+      <details class="faq-item" open>
+        <summary>Що якщо після челенджу я так і не отримаю офер?</summary>
+        <p>Офер залежить від ринку, рекрутера і десятків факторів поза нашим контролем. Але після цих 21 днів у тебе буде те, чого зараз немає: чітка розповідь, упакований профіль і впевнені відповіді. Це те, що я можу дати — і це я гарантую.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Чи підійде, якщо я зараз не активно шукаю роботу?</summary>
+        <p>Так. Багато учасниць приходять саме щоб підготуватись заздалегідь — поки немає тиску. Це навіть краще: є час зробити все спокійно, без стресу дедлайну.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Чи підходить це мені, якщо я ще не знаю, в яку сферу хочу?</summary>
+        <p>Так. Челендж не вимагає, щоб ти вже точно знала напрямок. Він допомагає розкласти твій досвід так, щоб побачити, які сфери насправді підходять — і піти на співбесіду з чіткою історією, а не з розмитим «я можу все».</p>
+      </details>
+      <details class="faq-item">
+        <summary>У мене мало часу. Чи встигну?</summary>
+        <p>15–30 хвилин на день — це все. Завдання короткі й одразу практичні. Якщо пропустиш день — матеріали нікуди не зникнуть.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Я не вмію користуватись LinkedIn. Це проблема?</summary>
+        <p>Ні. Ми або створимо профіль з нуля, або доопрацюємо той, що вже є. Обидва варіанти підходять.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Чи будеш ти відповідати мені особисто?</summary>
+        <p>Так, я в чаті щодня. Відповідаю на питання, коментую завдання. Це жива група з підтримкою, а не автоматичний курс.</p>
+      </details>
+      <details class="faq-item">
+        <summary>А якщо я живу не в Україні?</summary>
+        <p>Все відбувається онлайн у Telegram. Часовий пояс не має значення — завдання виходять вранці за київським часом, а виконувати можна коли зручно.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Підійде, якщо я хочу не нову роботу, а підвищення на теперішній?</summary>
+        <p>Так. Уміння правильно розповідати про себе працює в обох випадках.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- SOFT CTA -->
+<section id="softcta" style="padding-top:0;">
+  <div class="wrap">
+    <div class="soft-cta">
+      <h3>Не впевнена, чи підійде саме тобі?</h3>
+      <p>Просто напиши мені — коротко розкажи про свою ситуацію. Я подивлюся на твою ситуацію і чесно скажу, чи підійде цей формат саме тобі.</p>
+      <a class="btn btn-ghost" href="https://t.me/IrenLutsenko?text=Хочу%20запитати%20про%20челендж%20%C2%ABВидима%20і%20впевнена%C2%BB" style="border-color:var(--orange);color:var(--orange-deep);">Просто написати →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section id="price">
+  <div class="wrap">
+    <div class="price-block">
+      <div class="eyebrow" style="justify-content:center;">Ціна</div>
+      <p style="font-size:17px;color:var(--ink-soft);margin:0 0 24px;">Участь у челенджі — €97. Без прихованих платежів.</p>
+      <div class="price-row">
+        <div class="price-card">
+          <span class="p-tag">Одна</span>
+          <div class="p-val">€97</div>
+          <div class="p-sub">участь у челенджі</div>
+          <a class="btn btn-primary btn-block price-pay-btn" href="#" id="paySolo">Оплатити €97</a>
+        </div>
+        <div class="price-card pop">
+          <span class="p-tag">Разом із подругою</span>
+          <div class="p-val">€150</div>
+          <div class="p-sub">€75 кожна — бо підтримка поруч теж частина результату</div>
+          <a class="btn btn-primary btn-block price-pay-btn" href="#" id="payDuo">Оплатити €150</a>
+        </div>
+      </div>
+      <ul class="includes-list">
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>21 день щоденних завдань + живі зустрічі зі мною</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>«Карта видимості» — робочий шаблон, який заповнюєш по днях</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Закрита група підтримки на весь час челенджу</li>
+      </ul>
+      <p class="p-note">Старт 1 жовтня. Оплата підтверджує вашу участь.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="finalcta">
+  <div class="wrap">
+    <div class="final">
+      <div class="eyebrow" style="justify-content:center;">Готова зробити перший крок?</div>
+      <h2>21 день. Старт 1 жовтня.</h2>
+      <p>Розповідь про себе, LinkedIn, який знаходять, і впевненість на співбесіді — замість чергової поради «просто повір у себе».</p>
+      <a class="btn btn-primary pay-direct-btn" href="#" target="_blank">Приєднатись за €97 →</a>
+      <div class="micro">€97 за участь · €150 за двох · Оплата підтверджує місце</div>
+      <div class="micro">Є питання? Напиши мені напряму в <a href="https://t.me/IrenLutsenko">Telegram</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEGAL -->
+<section class="legal-section" id="legal">
+  <div class="wrap">
+
+    <div class="legal-block" id="terms">
+      <h3>Умови надання послуг</h3>
+      <p>Продавець: ФОП Луценко Ірина Вікторівна. Послуга: участь у 21-денному онлайн-челенджі «Видима і впевнена» для жінок 35+.</p>
+      <p>Формат: щоденні завдання в закритій групі Telegram + живі онлайн-зустрічі за розкладом. Доступ до групи й матеріалів надається протягом 24 годин після підтвердження оплати, на email або Telegram, вказаний при реєстрації.</p>
+      <p>Тривалість участі: 21 день з дати старту потоку. Старт наступного потоку — 1 жовтня 2026. Ціна: €97 (участь однієї особи) або €150 (участь удвох, €75 з кожної).</p>
+      <p>Способи оплати: онлайн-оплата карткою через сервіс WayForPay.</p>
+    </div>
+
+    <div class="legal-block" id="refund">
+      <h3>Політика повернення коштів</h3>
+      <p>Якщо ви оплатили участь, але передумали до дати старту потоку — повне повернення коштів здійснюється за запитом на irenlutsen@gmail.com або в Telegram, протягом 5 робочих днів.</p>
+      <p>Після старту потоку (з моменту надання доступу до групи й матеріалів) кошти не повертаються, оскільки послугу вже надано в повному обсязі доступу. У виняткових випадках (технічна неможливість скористатись послугою з боку продавця) питання повернення розглядається індивідуально — напишіть на контакти нижче.</p>
+    </div>
+
+    <div class="legal-block" id="contacts">
+      <h3>Контактна інформація</h3>
+      <p>ФОП Луценко Ірина Вікторівна<br>
+      ІПН: 2955000505<br>
+      Юридична адреса: Україна, 08603, Київська обл., Обухівський р-н, м. Васильків, вул. Декабристів, 40/1, кв. 10<br>
+      Телефон: +38 (068) 352-11-51<br>
+      Email: irenlutsen@gmail.com</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section class="social-section">
+  <div class="wrap">
+    <p>Є питання перед оплатою? Пишіть — і слідкуйте за оновленнями тут:</p>
+    <div class="social-links">
+      <a class="social-link telegram-link" href="https://t.me/IrenLutsenko" target="_blank">
+        <svg viewBox="0 0 24 24" stroke-width="2"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg>
+        Зв'язатись у Telegram
+      </a>
+      <a class="social-link" href="https://www.instagram.com/career.iren" target="_blank">
+        <svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        Instagram
+      </a>
+      <a class="social-link" href="https://www.facebook.com/share/1DNtgundJ4/?mibextid=wwXIfr" target="_blank">
+        <svg viewBox="0 0 24 24" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        Facebook
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div style="margin-bottom:10px;font-size:13px;">
+    <a href="#terms" style="text-decoration:underline;">Умови надання послуг</a> ·
+    <a href="#refund" style="text-decoration:underline;">Повернення коштів</a> ·
+    <a href="#contacts" style="text-decoration:underline;">Контакти</a>
+  </div>
+  © 2026 Ірина Луценко — «Видима і впевнена». Кар'єрний челендж для жінок 35+.
+</footer>
+
+<script>
+// Платіжні посилання WayForPay — вставте свої посилання
+var PAYMENT_LINK_SOLO = "https://secure.wayforpay.com/button/b0ddbb734d42c";
+var PAYMENT_LINK_DUO  = "https://secure.wayforpay.com/button/bbf9753d5a46c";
+
+document.getElementById('paySolo').setAttribute('href', PAYMENT_LINK_SOLO);
+document.getElementById('payDuo').setAttribute('href', PAYMENT_LINK_DUO);
+document.getElementById('paySolo').setAttribute('target', '_blank');
+document.getElementById('payDuo').setAttribute('target', '_blank');
+
+var directBtns = document.querySelectorAll('.pay-direct-btn');
+for (var i = 0; i < directBtns.length; i++) {
+  directBtns[i].setAttribute('href', PAYMENT_LINK_SOLO);
+}
+</script>
+
+</body>
+</html>

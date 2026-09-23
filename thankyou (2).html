@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1748757236373295');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+<meta charset="utf-8">
+<meta name="facebook-domain-verification" content="3tuesk9fmveoc39guzg137w2id5tgr" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Дякуємо за оплату — Кар'єрна програма для жінок 35+</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#201E1D;
+  --ground:#F3F2F2;
+  --surface:#EAE9E9;
+  --signal:#EC3013;
+  --tint:#FFE0D9;
+  --deep:#AE1800;
+  --font:"Archivo","Helvetica Neue",Arial,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font);font-size:18px;line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;align-items:center}
+.wrap{max-width:640px;margin:0 auto;padding:clamp(28px,6vw,80px) clamp(20px,5vw,40px)}
+.check{width:56px;height:56px;background:var(--signal);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:28px;margin-bottom:28px}
+.label{font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--deep)}
+h1{font-weight:800;letter-spacing:-.03em;line-height:.98;margin:14px 0 20px;font-size:clamp(32px,6vw,52px)}
+p{margin:0 0 16px;max-width:52ch}
+.box{background:var(--surface);border-top:4px solid var(--signal);padding:24px 26px;margin:28px 0}
+.box p{margin:0 0 10px}
+.box p:last-child{margin-bottom:0}
+.box b{font-weight:800}
+.btn{display:inline-flex;align-items:center;gap:14px;background:var(--signal);color:#fff;text-decoration:none;font-weight:600;font-size:18px;padding:18px 26px;border:0;border-radius:0;cursor:pointer;margin-top:8px;animation:btn-pulse 2.4s ease-in-out infinite}
+.btn:hover{background:var(--deep)}
+@keyframes btn-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+@media (prefers-reduced-motion:reduce){.btn{animation:none}}
+.foot{font-size:15px;color:var(--ink);opacity:.7;margin-top:32px}
+.foot a{color:inherit}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="check">✓</div>
+  <p class="label">Оплату отримано</p>
+  <h1>Дякуємо! Ти в групі.</h1>
+  <p>Оплата пройшла успішно. Це перший крок від «не знаю, куди подаватися» до конкретного плану дій.</p>
+
+  <div class="box">
+    <p><b>Що далі:</b> протягом 24 годин я особисто надішлю деталі доступу до групи на email або в Telegram, який ти вказала під час оплати.</p>
+    <p><b>Старт групи</b> — 1 жовтня. До того часу — просто чекай на запрошення, нічого робити не потрібно.</p>
+  </div>
+
+  <p>Якщо через 24 години нічого не прийшло — просто напиши мені, я одразу перевірю.</p>
+
+  <a class="btn" href="https://t.me/IrenLutsenko" target="_blank" rel="noopener">Написати в Telegram →</a>
+
+  <p class="foot">© 2026 Ірина Луценко · кар'єрна програма для жінок 35+</p>
+</div>
+
+<script>
+var PRICE_DEADLINE = new Date('2026-09-30T23:59:59+03:00');
+var value = (new Date() <= PRICE_DEADLINE) ? 39 : 79;
+
+if (!sessionStorage.getItem('fb_purchase_fired')) {
+  if (typeof fbq === 'function') {
+    fbq('track', 'Purchase', {
+      value: value,
+      currency: 'EUR',
+      content_name: "21-денна кар'єрна програма"
+    });
+  }
+  sessionStorage.setItem('fb_purchase_fired', '1');
+}
+</script>
+
+</body>
+</html>

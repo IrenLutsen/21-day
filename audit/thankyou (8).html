@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1748757236373295');
+fbq('track', 'PageView');
+
+/* Purchase рахуємо лише один раз з одного браузера,
+   щоб оновлення сторінки чи повторний візит не дублювали продаж */
+(function(){
+  var KEY = 'audit_purchase_tracked';
+  var already = false;
+  try { already = localStorage.getItem(KEY) === '1'; } catch(e) {}
+  if (!already) {
+    fbq('track', 'Purchase', {value: 18, currency: 'EUR', content_name: "Кар'єрний аудит"});
+    try { localStorage.setItem(KEY, '1'); } catch(e) {}
+  }
+})();
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1748757236373295&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yxo97ij3ue");
+</script>
+<!-- End Microsoft Clarity -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Дякую! Обери час аудиту — Ірина Луценко</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111;--muted:#6E6E73;--blue:#1077FD;--blue-dark:#0A5FD6;--font:"Inter","Helvetica Neue",Helvetica,Arial,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);font-family:var(--font);font-size:18px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:clamp(40px,7vw,80px) 20px}
+h1{font-weight:400;font-size:clamp(34px,6vw,52px);line-height:1.1;letter-spacing:-.02em;margin:0 0 18px}
+h2{font-weight:500;font-size:clamp(24px,3.4vw,30px);line-height:1.2;letter-spacing:-.01em;margin:56px 0 8px}
+.mk{background:var(--blue);color:#fff;padding:0 .14em}
+.lead{margin:0 0 8px}
+.cal{margin:24px -20px 0;border-top:1px solid #111;border-bottom:1px solid #111}
+.calendly-inline-widget{min-width:320px;height:720px}
+.cal-fallback{margin:14px 0 0;font-size:16px;color:var(--muted)}
+.cal-fallback a{color:var(--blue);font-weight:500}
+.done{display:none;margin:24px 0 0;padding:22px 24px;background:#F2F7FF;border-left:4px solid var(--blue)}
+.done.on{display:block}
+.done b{display:block;font-weight:600;margin-bottom:4px}
+ol{padding:0;margin:20px 0 0;list-style:none;counter-reset:s}
+ol li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:12px;padding:18px 0;border-top:1px solid #111}
+ol li:last-child{border-bottom:1px solid #111}
+ol li::before{content:counter(s);font-size:26px;line-height:1;color:var(--blue)}
+ol b{display:block;font-weight:600}
+ol span{display:block;font-size:16px;color:var(--muted);margin-top:2px}
+.help{margin:40px 0 0;font-size:16px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:#fff;color:var(--blue);border:2px solid var(--blue);text-decoration:none;font-weight:500;font-size:16px;letter-spacing:.03em;padding:12px 24px;border-radius:999px;margin-top:12px}
+.btn:hover{background:var(--blue);color:#fff}
+@media (min-width:800px){.cal{margin-left:0;margin-right:0}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <h1>Дякую! Твій аудит <span class="mk">оплачено</span> 🎉</h1>
+  <p class="lead">Останній крок — обери зручний день і час для зустрічі прямо тут, у календарі нижче.</p>
+
+  <div class="cal">
+    <div class="calendly-inline-widget js-calendly-inline"></div>
+  </div>
+  <p class="cal-fallback">Календар не завантажився? <a class="js-calendly-link" href="#" target="_blank" rel="noopener">Відкрий його в новій вкладці</a></p>
+
+  <div class="done js-done" role="status" aria-live="polite">
+    <b>Готово, зустріч заброньовано ✅</b>
+    Підтвердження та посилання на Zoom прийдуть тобі на пошту. Невдовзі я особисто надішлю анкету.
+  </div>
+
+  <h2>Що буде далі</h2>
+  <ol>
+    <li><div><b>Ти бронюєш час у календарі</b><span>Підтвердження й посилання на Zoom прийдуть на пошту.</span></div></li>
+    <li><div><b>Я особисто надсилаю тобі анкету</b><span>Після того як ти забронюєш зустріч.</span></div></li>
+    <li><div><b>Ти заповнюєш анкету й надсилаєш CV або LinkedIn</b><span>Не пізніше ніж за 24 години до зустрічі — щоб я встигла все проаналізувати.</span></div></li>
+    <li><div><b>Зустріч у Zoom — 60 хвилин</b><span>Розбираємо твій досвід, ролі, зарплатні орієнтири та наступні кроки.</span></div></li>
+    <li><div><b>Персональна кар'єрна карта</b><span>Прийде протягом 24–48 годин після зустрічі.</span></div></li>
+  </ol>
+
+  <p class="help">Сторінка закрилась, щось не працює або є питання? Напиши мені — допоможу.<br>
+  <a class="btn" href="https://t.me/IrenLutsenko" target="_blank" rel="noopener">Написати в Telegram</a></p>
+</main>
+
+<script>
+/* ===== НАЛАШТУВАННЯ =====
+   Посилання на подію в Calendly. Подія має тривати 60 хвилин.
+   Якщо створиш нову подію на 60 хвилин — встав сюди її посилання. */
+const CALENDLY_URL = "https://calendly.com/3521151/60min";
+/* ======================== */
+
+const sep = CALENDLY_URL.indexOf("?") === -1 ? "?" : "&";
+const embedUrl = CALENDLY_URL + sep + "hide_gdpr_banner=1&primary_color=1077fd";
+
+document.querySelector(".js-calendly-inline").setAttribute("data-url", embedUrl);
+document.querySelectorAll(".js-calendly-link").forEach(a => { a.href = CALENDLY_URL; });
+
+/* Коли людина забронювала час — показуємо підтвердження і передаємо подію в Meta Pixel */
+window.addEventListener("message", function(e){
+  if (!e.data || typeof e.data !== "object" || typeof e.data.event !== "string") return;
+  if (e.origin.indexOf("calendly.com") === -1) return;
+  if (e.data.event === "calendly.event_scheduled") {
+    document.querySelector(".js-done").classList.add("on");
+    if (window.fbq) fbq("track", "Schedule");
+  }
+});
+</script>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</body>
+</html>
